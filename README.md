@@ -6,3 +6,4 @@ keiji
 CJ
 TKD
 おっきー
+練習
