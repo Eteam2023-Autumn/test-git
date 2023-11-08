@@ -1,0 +1,51 @@
+body {
+    background-image: url(/static/img/Leaf.jpg); /* 背景画像の設置 */
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten; /* 背景画像のブレンド効果 明るく合成する */
+    background-repeat: no-repeat; /* 背景画像 繰り返し描画しない */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.registration-container {
+    width: 800px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 90px;
+	background-color: rgba(255,255,255,0.3);
+    z-index: 1; /* 下レイヤーは z-index 1 に配置 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rectangle-right-green {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: #1D8A99;
+
+}
+
+.registration-title {
+    color: white;
+    opacity: 0.7;
+    font-size: 96px;
+    font-family: 'Crimson Text', serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+}
+
+.registration-form label {
+    font-size: 12px;
+    color: black;
+}
+
+.registration-button {
+    width: 100%;
+    margin-bottom: 12px; /*要素の下側のマージン領域を設定 */
+}
+
+
