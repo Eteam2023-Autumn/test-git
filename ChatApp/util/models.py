@@ -20,7 +20,11 @@ class dbConnect:
     def getUser(email):
         try:
             conn = DB.getConnection()
+<<<<<<< HEAD
             cur = conn.cursor()
+=======
+            DBgetConnecitionメソッドを呼び出す
+>>>>>>> 9da3d3c8262176ccad8ca15b7812fb81d913b943
             sql = "SELECT * FROM users WHERE email=%s;"
             cur.execute(sql, (email))
             user = cur.fetchone()
@@ -60,15 +64,39 @@ class dbConnect:
             abort(500)
         finally:
             cur.close()
+<<<<<<< HEAD
 
+=======
+            
+    def getChannelById(cid):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "SELECT * FROM channels WHERE id=%s;"
+            cur.execute(sql, (cid))
+            channel = cur.fetchone()
+            
+        except Exception as e:
+            print(e + 'が発生しています')
+            abort(500)
+        finally:
+            cur.close()
+            return channel
+>>>>>>> 9da3d3c8262176ccad8ca15b7812fb81d913b943
 
     def getChannelByName(channel_name):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
+<<<<<<< HEAD
             sql = "SELECT * FROM channels WHERE name=%s;"#channelsと言うデータベースからname=%sを絞り込んで全てのカラムを取ってくる
             cur.execute(sql, (channel_name))
             channel = cur.fetchone()#1件だけを取得する
+=======
+            sql = "SELECT * FROM channels WHERE name=%s;"
+            cur.execute(sql, (channel_name))
+            channel = cur.fetchone()
+>>>>>>> 9da3d3c8262176ccad8ca15b7812fb81d913b943
             return channel
         except Exception as e:
             print(e + 'が発生しています')
@@ -91,6 +119,7 @@ class dbConnect:
             cur.close()
 
 
+<<<<<<< HEAD
     def getChannelByName(channel_name):
         try:
             conn = DB.getConnection()
@@ -106,6 +135,8 @@ class dbConnect:
             return channel
 
 
+=======
+>>>>>>> 9da3d3c8262176ccad8ca15b7812fb81d913b943
     def updateChannel(uid, newChannelName, newChannelDescription, cid):
         try:
             conn = DB.getConnection()
