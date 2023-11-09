@@ -20,7 +20,7 @@ class dbConnect:
     def getUser(email):
         try:
             conn = DB.getConnection()
-            DBgetConnecitionメソッドを呼び出す
+            cur = conn.cursor()
             sql = "SELECT * FROM users WHERE email=%s;"
             cur.execute(sql, (email))
             user = cur.fetchone()
@@ -60,21 +60,7 @@ class dbConnect:
             abort(500)
         finally:
             cur.close()
-            
-    def getChannelById(cid):
-        try:
-            conn = DB.getConnection()
-            cur = conn.cursor()
-            sql = "SELECT * FROM channels WHERE id=%s;"
-            cur.execute(sql, (cid))
-            channel = cur.fetchone()
-            
-        except Exception as e:
-            print(e + 'が発生しています')
-            abort(500)
-        finally:
-            cur.close()
-            return channel
+
 
     def getChannelByName(channel_name):
         try:
@@ -103,6 +89,21 @@ class dbConnect:
             abort(500)
         finally:
             cur.close()
+
+
+    def getChannelByName(channel_name):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "SELECT * FROM channels WHERE name=%s;"
+            cur.execute(sql, (channel_name))
+            channel = cur.fetchone()
+        except Exception as e:
+            print(e + 'が発生しました')
+            abort(500)
+        finally:
+            cur.close()
+            return channel
 
 
     def updateChannel(uid, newChannelName, newChannelDescription, cid):
