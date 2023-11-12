@@ -1,8 +1,67 @@
 {% extends 'registration/base.html' %} {% block title %}
 <title>Signup</title>
 {% endblock %} {% block body %}
-<div class="registration-wrapper">
-    <div class="registration-container">
-
+<div class="horizontal-line-container">
+    <div class="horizontal-line-bold"></div>
+    <div class="horizontal-line-thin"></div>
+    <div class="horizontal-line-under"></div>
+</div>
+    <div class="vertical-line-bold"></div>
+    <div class="vertical-line-thin"></div>
+    <div class="rectangle-right-green"></div>
+<div class="registration-container">
+    <h2 class="registration-title-signup">Sign up</h2>
+    <div class="registration-form-wrapper">
+        <form class="registration-form signup" method="post">
+            
+            <div class="input">
+                <label for="signup-name-input">Name</label>
+                <input
+                    type="text"
+                    placeholder="名前"
+                    name="name"
+                    id="signup-name-input"
+                />
+            </div>
+            <div class="input">
+                <label for="signup-email-input">Email</label>
+                <input
+                    type="text"
+                    placeholder="Eメール"
+                    name="email"
+                    id="signup-email-input"
+                />
+            </div>
+            <div class="input">
+                <label for="signup-password-input">Password</label>
+                <input
+                    type="password"
+                    placeholder="パスワード"
+                    name="password1"
+                    id="signup-password-input"
+                />
+            </div>
+            <div class="input">
+                <label for="signup-password-confirmation-input">
+                    Password Confirmation
+                </label>
+                <input
+                    type="password"
+                    placeholder="パスワード（確認）"
+                    name="password2"
+                    id="signup-password-confirmation-input"
+                />
+            </div>
+            <div class="registration-button-container">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %} {% endwith %}
+                <button class="registration-button">SIGN UP</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
