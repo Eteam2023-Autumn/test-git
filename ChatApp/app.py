@@ -79,6 +79,7 @@ def userLogin():
     return redirect('/login')
 
 <<<<<<< Updated upstream:ChatApp/app.py
+<<<<<<< Updated upstream:ChatApp/app.py
 
 # ログアウト
 @app.route('/logout')
@@ -205,6 +206,9 @@ def delete_message():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False)
+=======
+#ログアウト
+>>>>>>> Stashed changes:ChatApp/util/app.py
 =======
 #ログアウト
 >>>>>>> Stashed changes:ChatApp/util/app.py
