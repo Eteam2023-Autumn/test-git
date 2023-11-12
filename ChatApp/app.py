@@ -1,23 +1,24 @@
-from flask import Flask, request, redirect, render_template, session, flash, abort
+from flask import Flask, request, render_template, redirect, session, flash
 from datetime import timedelta
-import hashlib
-import uuid
+from passlib.hash import bcrypt
+import secrets 
 import re
-
+import uuid
 from models import dbConnect
 
 app = Flask(__name__)
-app.secret_key = uuid.uuid4().hex
+app.secret_key = secrets.token_hex(32)
 app.permanent_session_lifetime = timedelta(days=30)
 
 
-# サインアップページの表示
-@app.route('/signup')
+#サインアップのページ
+@app.route("/signup", methods=["GET"])
 def signup():
-    return render_template('registration/signup.html')
+    if request.method == "GET":
+        return render_template('registration/signup.html')
 
 
-# サインアップ処理
+#サインアップの処理
 @app.route('/signup', methods=['POST'])
 def userSignup():
     name = request.form.get('name')
@@ -25,56 +26,59 @@ def userSignup():
     password1 = request.form.get('password1')
     password2 = request.form.get('password2')
 
-    pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+    email_pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 
-    if name == '' or email =='' or password1 == '' or password2 == '':
-        flash('空のフォームがあるようです')
+    if not all([name,email,password1,password2]):
+        flash('すべてのフォームを入力してください。')
     elif password1 != password2:
-        flash('二つのパスワードの値が違っています')
-    elif re.match(pattern, email) is None:
-        flash('正しいメールアドレスの形式ではありません')
+        flash('パスワードが一致しません。')
+    elif not re.match(email_pattern,email):
+        flash('正しいメールアドレスの形式ではありません。')
     else:
-        uid = uuid.uuid4()
-        password = hashlib.sha256(password1.encode('utf-8')).hexdigest()
-        DBuser = dbConnect.getUser(email)
-
-        if DBuser != None:
-            flash('既に登録されているようです')
+        if dbConnect.getUser(email) is not None:
+            flash('既に登録されているメールアドレスです')
         else:
+            uid = uuid.uuid4()
+            password = hashlib.sha256(password1.encode('utf-8')).hexdigest()
+
             dbConnect.createUser(uid, name, email, password)
             UserId = str(uid)
-            session['uid'] = UserId
+            session['uid'] = str(uid)
             return redirect('/')
+    #エラー時にサインアップページにリダイレクト    
     return redirect('/signup')
 
 
-# ログインページの表示
+#ログインページの表示
 @app.route('/login')
 def login():
     return render_template('registration/login.html')
 
-
-# ログイン処理
+#ログイン処理
 @app.route('/login', methods=['POST'])
 def userLogin():
     email = request.form.get('email')
     password = request.form.get('password')
 
-    if email =='' or password == '':
-        flash('空のフォームがあるようです')
+    if email == '' or password == '':
+        flash('空のフォームがあります。')
     else:
         user = dbConnect.getUser(email)
         if user is None:
-            flash('このユーザーは存在しません')
+            flash('このユーザーは存在しません。')
         else:
-            hashPassword = hashlib.sha256(password.encode('utf-8')).hexdigest()
-            if hashPassword != user["password"]:
+            hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+            
+            if hashed_password != user["password"]:
                 flash('パスワードが間違っています！')
             else:
-                session['uid'] = user["uid"]
+                session['uid'] = str(user["uid"])
+                
                 return redirect('/')
+
     return redirect('/login')
 
+<<<<<<< Updated upstream:ChatApp/app.py
 
 # ログアウト
 @app.route('/logout')
@@ -201,3 +205,6 @@ def delete_message():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False)
+=======
+#ログアウト
+>>>>>>> Stashed changes:ChatApp/util/app.py
