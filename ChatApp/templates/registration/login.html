@@ -1,45 +1,50 @@
 {% extends 'registration/base.html' %} {% block title %}
 <title>Login</title>
 {% endblock %} {% block body %}
-<div class="registration-wrapper">
-  <div class="rectangle-right-green"></div>
-  <div class="registration-container">
+<div class="horizontal-line-container">
+  <div class="horizontal-line-bold"></div>
+  <div class="horizontal-line-thin"></div>
+  <div class="horizontal-line-under"></div>
+</div>
+<div class="vertical-line-bold"></div>
+<div class="vertical-line-thin"></div>
+<div class="rectangle-right-green"></div>
+<div class="registration-container">
+  <h1 class="registration-title">Chat app</h1>
+  <div class="registration-form-wrapper">
     <form class="registration-form" method="post">
-        <h1 class="registration-title">Chat app</h1>
-        <div>
-          <label for="email-input">Email</label>
-          <input 
-            type="text" 
-            placeholder="Email" 
-            name="email"
-            id="email-input"
-          />
-        </div>
-        <div>
-          <label for="password-input">Password</label>
-          <input 
-            type="password"
-            placeholder="Password" 
-            name="password"
-            id="password-input"
-          />
-        </div>    
-        <div class="registration-button-container">
-          {% with messages = get_flashed_messages() %} {% if messages %}
-          <ul class="flashes">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %} {% endwith %}
-          <button class="registration-button">LOGIN</button>
-          <a class="switch-register-mode" href="{{ url_for('signup') }}">
-            登録はこちら
-          </a>
-        </div>
-      </form>
-    </div>
-    </div>
+      <div class="input">
+        <label for="email-input">Email</label>
+        <input 
+          type="text" 
+          placeholder="Eメール" 
+          name="email"
+          id="email-input"
+        />
+      </div>
+      <div class="input">
+        <label for="password-input">Password</label>
+        <input 
+          type="password"
+          placeholder="パスワード" 
+          name="password"
+          id="password-input"
+        />
+      </div>    
+      <div class="registration-button-container">
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %}
+        <button class="registration-button">LOGIN</button>
+      </div>
+    </form>
   </div>
+  <a class="switch-register-mode" href="{{ url_for('signup') }}">
+    登録はこちら
+  </a>
 </div>
 {% endblock %}

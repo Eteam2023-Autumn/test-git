@@ -8,6 +8,76 @@ body {
     height: 100vh;
 }
 
+.horizontal-line-container{
+    display: flex;
+    justify-content: center; /* 横方向中央配置 */
+    align-items: center; /* 垂直方向中央配置 */
+    height: 100vh; /* ビューポートの高さ全体を占めるコンテナ */
+}
+
+.horizontal-line-bold {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%; /* 横棒の幅 */
+    height: 40px; /* 横棒の高さ */
+    background-color: #D9D9D9; /* 横棒の色 */
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.horizontal-line-thin {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%; /* 横棒の幅 */
+    height: 2px; /* 横棒の高さ */
+    background-color: #D9D9D9; /* 横棒の色 */
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.horizontal-line-under {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%; /* 横棒の幅 */
+    height: 2px; /* 横棒の高さ */
+    background-color: #D9D9D9; /* 横棒の色 */
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.vertical-line-bold {
+    position: fixed;
+    top: 0;
+    right: 200px;
+    width: 40px;
+    height: 100%;
+    background-color: #D9D9D9;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.vertical-line-thin {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: #D9D9D9;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.rectangle-right-green {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: var(--green);
+}
 .registration-container {
     width: 800px;
     height: 100vh;
@@ -19,33 +89,99 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.rectangle-right-green {
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    background-color: #1D8A99;
-
+    padding: 0 6%;
+    box-sizing: border-box;
 }
 
 .registration-title {
-    color: white;
+    color: var(--snow);
     opacity: 0.7;
     font-size: 96px;
     font-family: 'Crimson Text', serif;
     text-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+    margin: 14vh auto;
 }
 
-.registration-form label {
-    font-size: 12px;
+.registration-title-signup {
+    color: var(--snow);
+    opacity: 0.7;
+    font-size: 50px;
+    font-family: 'Crimson Text', serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+    margin: 130px auto 20px 0;
+    width: 70%;
+}
+
+.registration-form-wrapper {
+    width: 100%;
+    margin: 0 auto 3vh auto;
+    padding: 50px 20px;
+    background-color: var(--snow);
+    border: 3px solid #d2d2d2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration-form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    height: 80%;
+    margin: auto;
+}
+
+.input {
+    width: 100%;
+}
+
+.registration-form input {
+    border: solid 1px var(--deepgray);
+    outline: none;
+    margin-bottom: 10px;
+    line-height: 32px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
     color: black;
+    display: block;
+}
+
+.registration-form input::placeholder {
+    color: var(--lightgrey);
+}
+
+.registration-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .registration-button {
-    width: 100%;
-    margin-bottom: 12px; /*要素の下側のマージン領域を設定 */
+    width: 50%;
+    background-color: var(--wine);
+    color: var(--snow);
+    padding: 1rem 0;
+    font-size: 15px;
 }
 
+.switch-register-mode {
+    color: var(--snow);
+}
+
+.flashes {
+    margin: 0;
+    padding-inline-start: 0;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
 
