@@ -5,6 +5,7 @@ import secrets
 import re
 import uuid
 from models import dbConnect
+import hashlib
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
