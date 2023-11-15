@@ -1,5 +1,12 @@
 button {
     border: none;
     font-family:  'Crimson Text', serif;
+    cursor: pointer;
 }
+
+button:hover {
+    opacity: .6;
+}
+
+
 
