@@ -1,0 +1,85 @@
+header {
+    background-image: url(/static/img/Leaf.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    }
+
+.home-body {
+    background-color: var(--snow);
+}
+
+.home-title {
+    color: var(--snow);
+    font-size: 36px;
+    font-family: 'Crimson Text', serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+}
+
+.horizontal-line-thin-home {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%; /* 横棒の幅 */
+    height: 1px; /* 横棒の高さ */
+    background-color: #D9D9D9; /* 横棒の色 */
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+.main-container {
+    min-height: 100vh;
+    padding-left: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.channels-list-container {
+    width: 800px;
+    height: 350px;
+    box-sizing: border-box;
+}
+
+.channels-wrapper {
+
+}
+
+.add {
+    font-family: 'Crimson Text', serif;
+    font-size: ;
+}
+
+.channel-list-title {
+    font-family: 'Crimson Text', serif;
+}
+
+.channels-list-box {
+    width: 100%;
+    margin: auto;
+    padding: 50px 20px;
+    background-color: var(--lightgreen);
+    box-sizing: border-box;
+}
+
+p {
+    font-family: 'Crimson Text', serif;
+    color: var(--deepgreen);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg) brightness(109%) contrast(109%);
+}
+.channel-box {
+    list-style: none;
+}
+
