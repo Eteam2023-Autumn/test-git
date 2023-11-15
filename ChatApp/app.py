@@ -78,9 +78,6 @@ def userLogin():
 
     return redirect('/login')
 
-<<<<<<< Updated upstream:ChatApp/app.py
-<<<<<<< Updated upstream:ChatApp/app.py
-
 # ログアウト
 @app.route('/logout')
 def logout():
