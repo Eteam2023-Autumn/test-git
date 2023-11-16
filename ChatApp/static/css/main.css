@@ -44,27 +44,32 @@ header {
 
 .channels-list-container {
     width: 800px;
-    height: 350px;
     box-sizing: border-box;
-}
-
-.channels-wrapper {
-
+    position: relative;
 }
 
 .add {
+    width: 40px;
+    height: 40px;
     font-family: 'Crimson Text', serif;
-    font-size: ;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
 }
 
 .channel-list-title {
     font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .channels-list-box {
     width: 100%;
     margin: auto;
-    padding: 50px 20px;
+    padding: 3px 20px 50px 20px;
     background-color: var(--lightgreen);
     box-sizing: border-box;
 }
@@ -81,5 +86,15 @@ p {
 }
 .channel-box {
     list-style: none;
+}
+
+li {
+    display: flex;
+}
+
+a {
+    line-height: 3.4;
+    position: absolute;
+    left: 25px;
 }
 
