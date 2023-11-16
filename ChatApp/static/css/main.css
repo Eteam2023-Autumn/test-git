@@ -74,7 +74,7 @@ header {
     box-sizing: border-box;
 }
 
-p {
+.roomname {
     font-family: 'Crimson Text', serif;
     color: var(--deepgreen);
 }
@@ -88,11 +88,11 @@ p {
     list-style: none;
 }
 
-li {
+.channel-title-wrapper {
     display: flex;
 }
 
-a {
+.channel-del-icon{
     line-height: 3.4;
     position: absolute;
     left: 25px;
