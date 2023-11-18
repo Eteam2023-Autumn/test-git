@@ -8,6 +8,8 @@ ENV PYTHONUNBUFFERED=1
 RUN mkdir /code
 # コンテナのワークディレクトリを/codeに指定
 WORKDIR /code
+# Flask-Bcryptのインストール
+RUN pip install Flask-Bcrypt==1.0.1
 # ローカルのrequirements.txtをコンテナの/codeフォルダ直下に置く
 COPY ./requirements.txt /code/
 # コンテナ内でpip install -r requirements.txtを実行
