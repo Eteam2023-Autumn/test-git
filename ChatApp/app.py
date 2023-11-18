@@ -208,14 +208,14 @@ def delete_message():
     return redirect('/detail/{cid}'.format(cid = cid))
 
 
-# @app.errorhandler(404)
-# def show_error404(error):
-#     return render_template('error/404.html'),404
+@app.errorhandler(404)
+def show_error404(error):
+    return render_template('error/404.html'),404
 
 
-# @app.errorhandler(500)
-# def show_error500(error):
-#     return render_template('error/500.html'),500
+@app.errorhandler(500)
+def show_error500(error):
+    return render_template('error/500.html'),500
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False)
