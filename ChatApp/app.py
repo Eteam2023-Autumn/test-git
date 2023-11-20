@@ -169,11 +169,7 @@ def detail(cid):
     if uid is None:
         return redirect('/login')
 
-    try:
-       cid = int(cid)
-    except ValueError as v:
-       print(v + 'が発生しています')
-       abort(400)
+    cid = cid
     channel = dbConnect.getChannelById(cid)
     messages = dbConnect.getMessageAll(cid)
 
@@ -190,10 +186,10 @@ def add_message():
     message = request.form.get('message')
     cid = request.form.get('cid')
 
-    if message and cid:
+    if message:
         dbConnect.createMessage(uid, cid, message)
 
-    return redirect(f'/detail/{cid}')
+    return redirect('/detail/{cid}'.format(cid = cid))
 
 
 # メッセージの削除
@@ -206,20 +202,19 @@ def delete_message():
     message_id = request.form.get('message_id')
     cid = request.form.get('cid')
 
-    if message_id and cid:
+    if message_id:
         dbConnect.deleteMessage(message_id)
 
-    return redirect(f'/detail/{cid}')
+    return redirect('/detail/{cid}'.format(cid = cid))
+
+#@app.errorhandler(404)
+#def show_error404(error):
+   # return render_template('error/404.html'),404
 
 
-@app.errorhandler(404)
-def show_error404(error):
-    return render_template('error/404.html'),404
-
-
-@app.errorhandler(500)
-def show_error500(error):
-    return render_template('error/500.html'),500
+#@app.errorhandler(500)
+#def show_error500(error):
+    #return render_template('error/500.html'),500
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False)
