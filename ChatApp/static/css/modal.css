@@ -17,6 +17,9 @@
     display: none;
 }
 
+.modal-header {
+    margin-left: 25px;
+}
 
 .modal-body {
     display: flex;
@@ -32,12 +35,23 @@
 .modal-content {
     background-color: var(--snow);
     margin: 20% auto;
-    width: 70%;
+    width: 50%;
     border: 12px solid var(--wine);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
     animation-duration: 1s;
     position: relative;
+}
+
+.input {
+    width: 100%;
+}
+
+.modal-label {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
+    color: black;
+    display: block;
 }
 
 .channel-form-input {
@@ -75,4 +89,12 @@
     color: var(--snow);
     padding: 1rem 0;
     font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-label {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
+    color: black;
+    display: block;
 }

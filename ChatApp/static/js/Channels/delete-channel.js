@@ -7,6 +7,14 @@ const deleteChannelConfirmButton = document.getElementById(
     "delete-channel-confirmation-button"
 );
 
+// モーダル表示ボタンが押された時にモーダルを表示する
+const deleteChannelButton = document.getElementById("delete-button");
+
+
+deleteChannelButton.addEventListener("click", () => {
+    deleteChannelModal.style.display = "flex";
+});
+
   // モーダル内のXボタンが押された時にモーダルを非表示にする
 deletePageButtonClose.addEventListener("click", () => {
     deleteChannelModal.style.display = "none";
