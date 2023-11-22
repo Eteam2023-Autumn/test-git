@@ -65,7 +65,7 @@
 }
 
 .channel-form-input::placeholder {
-    color: var(--lightgrey);
+    color: var(--lightgray);
 }
 
 .modalClose {
@@ -83,7 +83,7 @@
     cursor: pointer;
 }
 
-.createbutton {
+.createbutton,.editbutton {
     width: 50%;
     background-color: var(--wine);
     color: var(--snow);

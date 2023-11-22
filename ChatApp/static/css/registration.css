@@ -155,7 +155,7 @@ label {
 }
 
 .registration-form input::placeholder {
-    color: var(--lightgrey);
+    color: var(--lightgray);
 }
 
 .registration-button-container {
