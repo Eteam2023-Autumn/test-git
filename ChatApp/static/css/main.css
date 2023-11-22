@@ -33,7 +33,7 @@ header {
     height: 1px; /* 横棒の高さ */
     background-color: #D9D9D9; /* 横棒の色 */
     mix-blend-mode: overlay;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .main-container {
