@@ -29,9 +29,6 @@ CREATE TABLE messages (
     created_at timestamp not null default current_timestamp
 );
 
-<<<<<<< HEAD
 INSERT INTO users(uid, user_name, email, password)VALUES('970af84c-dd40-47ff-af23-282b72b7cca8','テスト','test@gmail.com','37268335dd6931045bdcdf92623ff819a64244b53d0e746d438797349d4da578');
 INSERT INTO channels(id, uid, name, abstract)VALUES(1, '970af84c-dd40-47ff-af23-282b72b7cca8','Eteamroom','Eチームです');
 INSERT INTO messages(id, uid, cid, message)VALUES(1, '970af84c-dd40-47ff-af23-282b72b7cca8', '1', 'Eチームの皆さん会話をしましょう')
-=======
->>>>>>> 605f0741e15583fc5c5c61d65c06d559679ade5b
