@@ -1,0 +1,100 @@
+.modal {
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: var(--gray);
+    justify-content: center;
+    align-items: center;
+}
+
+#add-channel-modal,
+#update-channel-modal,
+#delete-channel-modal {
+    display: none;
+}
+
+.modal-header {
+    margin-left: 25px;
+}
+
+.modal-body {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    height: 80%;
+    margin: auto;
+}
+
+.modal-content {
+    background-color: var(--snow);
+    margin: 20% auto;
+    width: 50%;
+    border: 12px solid var(--wine);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+}
+
+.modal-label {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
+    color: black;
+    display: block;
+}
+
+.channel-form-input {
+    border: solid 1px var(--deepgray);
+    outline: none;
+    margin-bottom: 10px;
+    line-height: 32px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.channel-form-input::placeholder {
+    color: var(--lightgray);
+}
+
+.modalClose {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0px;
+}
+
+.modalClose:hover {
+    cursor: pointer;
+}
+
+.createbutton,.editbutton {
+    width: 50%;
+    background-color: var(--wine);
+    color: var(--snow);
+    padding: 1rem 0;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-label {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
+    color: black;
+    display: block;
+}

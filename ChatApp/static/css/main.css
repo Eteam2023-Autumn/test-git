@@ -1,0 +1,116 @@
+header {
+    background-image: url(/static/img/Leaf.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    }
+
+.home-body {
+    background-color: var(--snow);
+}
+
+.home-title {
+    color: var(--snow);
+    font-size: 36px;
+    font-family: 'Crimson Text', serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 20px;
+    z-index: 1000;
+}
+
+.horizontal-line-thin-home {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%; /* 横棒の幅 */
+    height: 1px; /* 横棒の高さ */
+    background-color: #D9D9D9; /* 横棒の色 */
+    mix-blend-mode: overlay;
+    z-index: 1000;
+}
+
+.main-container {
+    min-height: 100vh;
+    padding-left: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#channels-list-container {
+    width: 800px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#add-channel-button {
+    width: 40px;
+    height: 40px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+}
+
+.channel-list-title {
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#channels-list {
+    width: 100%;
+    margin: auto;
+    padding: 3px 20px 50px 20px;
+    background-color: var(--lightgreen);
+    box-sizing: border-box;
+}
+
+.channel-box {
+    list-style: none;
+}
+
+.channel-title-wrapper {
+    display: flex;
+}
+
+.delete-button {
+    width: 15px;
+    height: 15px;
+    line-height: 3.4;
+    position: absolute;
+    left: 25px;
+    filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg) brightness(109%) contrast(109%);
+}
+
+.channel-box li {
+    list-style: none;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.channel-box li a {
+    font-family: 'Crimson Text', serif;
+    color: var(--deepgreen);
+    flex-grow: 1;
+}
+
+.channel-box li a:hover {
+    cursor: pointer;
+}
+
