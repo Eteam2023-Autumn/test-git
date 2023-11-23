@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-from flask import Flask, request, redirect, render_template, session, flash, abort
-from datetime import timedelta
-import hashlib
-=======
 from flask import Flask, app, request, redirect, render_template, session, flash, abort
 from datetime import timedelta
->>>>>>> develop
 import uuid
 import re
 
@@ -13,22 +7,12 @@ from models import dbConnect
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-<<<<<<< HEAD
-app.secret_key = uuid.uuid4().hex
-=======
 app.secret_key = uuid.uuid4().hex 
->>>>>>> develop
 app.permanent_session_lifetime = timedelta(days=30)
 bcrypt = Bcrypt(app)
 
-<<<<<<< HEAD
-
-# サインアップページの表示
-@app.route('/signup')
-=======
 # サインアップページの表示
 @app.route("/signup", methods=["GET"])
->>>>>>> develop
 def signup():
     return render_template('registration/signup.html')
 
@@ -43,33 +27,13 @@ def userSignup():
    
 
     pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-<<<<<<< HEAD
-=======
 
     # 予め文字列として保存する
     uid = str(uuid.uuid4())
->>>>>>> develop
 
     if name == '' or email =='' or password1 == '' or password2 == '':
         flash('空のフォームがあるようです')
     elif password1 != password2:
-<<<<<<< HEAD
-        flash('二つのパスワードの値が違っています')
-    elif re.match(pattern, email) is None:
-        flash('正しいメールアドレスの形式ではありません')
-    else:
-        uid = uuid.uuid4()
-        password = hashlib.sha256(password1.encode('utf-8')).hexdigest()
-        DBuser = dbConnect.getUser(email)
-
-        if DBuser != None:
-            flash('既に登録されているようです')
-        else:
-            UserId = str(uid)
-            dbConnect.createUser(uid, name, email, password) 
-            session['uid'] = UserId
-            return redirect('/')
-=======
         flash('パスワードが一致しません。')
     # not re.は True を返す
     elif not re.match(pattern, email): 
@@ -86,7 +50,6 @@ def userSignup():
 
             return redirect('/')
         
->>>>>>> develop
     return redirect('/signup')
 
 
@@ -103,31 +66,19 @@ def userLogin():
     password = request.form.get('password')
 
     if email =='' or password == '':
-<<<<<<< HEAD
-        flash('空のフォームがあるようです')
-=======
         flash('空のフォームがあります。')
->>>>>>> develop
     else:
         user = dbConnect.getUser(email)
         if user is None:
             flash('このユーザーは存在しません')
         else:
-<<<<<<< HEAD
-            hashPassword = hashlib.sha256(password.encode('utf-8')).hexdigest()
-            if hashPassword != user["password"]:
-=======
             #パスワードの検証
             if not bcrypt.check_password_hash(user["password"], password):
->>>>>>> develop
                 flash('パスワードが間違っています！')
             else:
                 session['uid'] = user["uid"]
                 return redirect('/')
-<<<<<<< HEAD
-=======
             
->>>>>>> develop
     return redirect('/login')
 
 
@@ -255,20 +206,6 @@ def delete_message():
 
     return redirect('/detail/{cid}'.format(cid = cid))
 
-<<<<<<< HEAD
-
-@app.errorhandler(404)
-def show_error404(error):
-    return render_template('error/404.html'),404
-
-
-@app.errorhandler(500)
-def show_error500(error):
-    return render_template('error/500.html'),500
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=False)
-=======
 #@app.errorhandler(404)
 #def show_error404(error):
    # return render_template('error/404.html'),404
@@ -280,4 +217,3 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False)
->>>>>>> develop
