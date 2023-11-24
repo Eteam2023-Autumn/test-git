@@ -3,10 +3,12 @@
   }
   
   .error-wrapper {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    background: var(--snow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    background: white;
   }
 
   .error-button {
@@ -14,58 +16,42 @@
     padding-right: 70px;
     padding-top: 12px;
     padding-bottom: 12px;
-    left: 559px;
-    top: 604px;
-    position: absolute;
-    background: #B16E8E;
+    background: var(--wine);
     justify-content: center;
     align-items: center;
     gap: 10px;
-    display: inline-flex
+    display: inline-flex;
   }
 
   .error-button a {
     text-align: center;
-    color: white;
+    color: var(--snow);
     font-size: 15px;
     font-family: Crimson Text;
     font-weight: 700;
-    word-wrap: break-word
   }
-  
-  .error-gif{
-    width: 222px;
-    height: 195px;
-    left: 367px;
-    top: 299px;
-    position: absolute"
+
+  .error-gif1{
+    margin-right: 201px;
   }
     
   .error-title{
-    width: 281px;
-    height: 75px;
-    left: 503px;
-    top: 371px;
-    position: absolute;
-    text-align: center;
-    color: black;
-    font-size: 24px;
+    color: var(--black);
+    font-size: 21px;
     font-family: Crimson Text;
     font-weight: 700;
-    word-wrap: break-word"
+    margin-left: 100px;
+    position: absolute;
+    left: 40%;
   }
     
   .error-description{
-    width: 524px;
-    height: 53px;
-    left: 382px;
-    top: 494px;
-    position: absolute;
     text-align: center;
-    color: black;
     font-size: 15px;
     font-family: Crimson Text;
     font-weight: 700;
-    word-wrap: break-word
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)translateY(-150%);
   }
-

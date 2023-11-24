@@ -86,10 +86,9 @@ header {
     display: flex;
 }
 
-.delete-button {
+#delete-channel-button {
     width: 15px;
     height: 15px;
-    line-height: 3.4;
     position: absolute;
     left: 25px;
     filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg) brightness(109%) contrast(109%);
@@ -98,7 +97,6 @@ header {
 .channel-box li {
     list-style: none;
     padding: 4px 0;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
@@ -108,9 +106,13 @@ header {
     font-family: 'Crimson Text', serif;
     color: var(--deepgreen);
     flex-grow: 1;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color .3s;
 }
 
 .channel-box li a:hover {
     cursor: pointer;
+    color: var(--snow);
 }
 

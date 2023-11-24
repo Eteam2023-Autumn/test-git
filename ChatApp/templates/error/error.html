@@ -3,17 +3,15 @@ body %}
 <body class="error">
     <div class="error-wrapper">
       <div class="error-title"><span>申し訳ございません</span></div>
-        <div class="error-description">
+       <div class="error-gif1">
+        <img src="static/img/error.jpg" />    
+       </div>
+       <div class="error-description">
           <p>{{ error_message }}</p>
             <a href="{{ url_for('index') }}">
-              <div id="error-button">戻る
-              </div>
-            </a>
+              <div class="error-button">戻る</div>
+            </a>    
         </div>
-      </div>
-    </div>
-    <img src="https://via.placeholder.com/222x195" 
-         class="error-gif"
-    />
-  </body>
-  {% endblock %}
+    </div>    
+</body>
+{% endblock %}

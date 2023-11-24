@@ -1,16 +1,10 @@
 // チャンネルを削除する時の処理
-const deleteChannelModal = document.getElementById(
-    "delete-channel-modal"
-);
-const deletePageButtonClose = document.getElementById(
-    "delete-page-close-button"
-);
-const deleteChannelConfirmButton = document.getElementById(
-    "delete-channel-confirmation-button"
-);
+const deleteChannelModal = document.getElementById("delete-channel-modal");
+const deletePageButtonClose = document.getElementById("delete-page-close-button");
+const deleteChannelConfirmButton = document.getElementById("delete-channel-confirmation-button");
 
 // モーダル表示ボタンが押された時にモーダルを表示する
-const deleteChannelButton = document.getElementById("delete-button");
+const deleteChannelButton = document.getElementById("delete-channel-button");
 
 deleteChannelButton.addEventListener("click", () => {
     deleteChannelModal.style.display = "flex";

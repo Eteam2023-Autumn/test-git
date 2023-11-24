@@ -15,10 +15,12 @@
             <ul class="channel-box">
                 {% for channel in channels %}
                 <li>
+                    {% if channel.uid == session.get("uid") %}
+                        <a href="/delete/{{channel.id}}">
+                            <img id="delete-channel-button" src="/static/img/close-icon.png">
+                        </a>
+                    {% endif %}
                     <a href="/detail/{{channel.id}}">{{channel.name}}</a>
-                    <a href="/delete/{{channel.id}}">
-                        <img class="delete-button" src="/static/img/close-icon.png">
-                    </a>
                 </li>
                 {% endfor %}
             </ul>
