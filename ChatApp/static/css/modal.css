@@ -92,6 +92,15 @@
     margin-bottom: 20px;
 }
 
+.deletebutton {
+    width: 50%;
+    background-color: var(--wine);
+    color: var(--snow);
+    padding: 1rem 0;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
 .modal-label {
     font-size: 16px;
     font-family: 'Crimson Text', serif;
